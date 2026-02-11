@@ -2,8 +2,6 @@ import {
   FaPython,
   FaJsSquare,
   FaJava,
-  FaHtml5,
-  FaCss3Alt,
   FaReact,
   FaNodeJs,
   FaDocker,
