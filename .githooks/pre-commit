@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "Running lint before commit..."
+npm run lint
