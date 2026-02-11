@@ -349,8 +349,10 @@ function About(): React.JSX.Element {
 
     appendLines(outputLines)
 
-    if (routeTo) {
-      setTimeout(() => navigate(routeTo), 350)
+    if (routeTo !== null) {
+      setTimeout(() => {
+        void navigate(routeTo)
+      }, 350)
     }
   }
 

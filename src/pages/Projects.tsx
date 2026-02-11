@@ -61,7 +61,7 @@ function Projects(): React.JSX.Element {
             <div key={project.id} className="project-card">
               <h3 className="project-title">{project.title}</h3>
               <p className="project-description">{project.description}</p>
-              {project.technologies && project.technologies.length > 0 && (
+              {project.technologies !== undefined && project.technologies.length > 0 && (
                 <div className="project-technologies">
                   {project.technologies.map((tech) => (
                     <span key={tech} className="tech-tag">
@@ -70,9 +70,9 @@ function Projects(): React.JSX.Element {
                   ))}
                 </div>
               )}
-              {(project.githubUrl || project.liveUrl) && (
+              {((project.githubUrl ?? '') !== '' || (project.liveUrl ?? '') !== '') && (
                 <div className="project-links">
-                  {project.githubUrl && (
+                  {(project.githubUrl ?? '') !== '' && (
                     <a
                       href={project.githubUrl}
                       target="_blank"
@@ -87,7 +87,7 @@ function Projects(): React.JSX.Element {
                       GitHub
                     </a>
                   )}
-                  {project.liveUrl && (
+                  {(project.liveUrl ?? '') !== '' && (
                     <a
                       href={project.liveUrl}
                       target="_blank"

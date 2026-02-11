@@ -1,4 +1,3 @@
-import { type ContactFormData } from '../types/contact'
 import {
   FaEnvelope,
   FaGlobe,
@@ -8,40 +7,13 @@ import {
 } from 'react-icons/fa'
 
 function Contact(): React.JSX.Element {
-  const handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>): void => {
-    event.preventDefault()
-    const formData = new FormData(event.currentTarget)
-    
-    const nameValue = formData.get('name')
-    const emailValue = formData.get('email')
-    const messageValue = formData.get('message')
-    
-    if (
-      nameValue === null ||
-      emailValue === null ||
-      messageValue === null ||
-      typeof nameValue !== 'string' ||
-      typeof emailValue !== 'string' ||
-      typeof messageValue !== 'string'
-    ) {
-      return
-    }
-    
-    const data: ContactFormData = {
-      name: nameValue,
-      email: emailValue,
-      message: messageValue,
-    }
-    void data
-  }
-
   return (
     <section className="contact-section">
       <div className="container">
         <h1 className="section-title">Get In Touch</h1>
         <p className="section-subtitle">
-          I'm always open to discussing new projects, creative ideas, or
-          opportunities to be part of your visions.
+          Open to interesting engineering roles, collaborations, and practical
+          product conversations.
         </p>
         <div className="contact-content">
           <div className="contact-info">
@@ -51,6 +23,7 @@ function Contact(): React.JSX.Element {
                   <FaEnvelope aria-hidden="true" />
                   Email
                 </h3>
+                <p>beards.venue-5y@icloud.com</p>
               </a>
             </div>
             <div className="contact-item">
@@ -63,6 +36,7 @@ function Contact(): React.JSX.Element {
                   <FaGlobe aria-hidden="true" />
                   Website
                 </h3>
+                <p>rsajja.dev</p>
               </a>
             </div>
             <div className="contact-item">
@@ -75,6 +49,7 @@ function Contact(): React.JSX.Element {
                   <FaGithub aria-hidden="true" />
                   GitHub
                 </h3>
+                <p>@gitroks</p>
               </a>
             </div>
             <div className="contact-item">
@@ -87,6 +62,7 @@ function Contact(): React.JSX.Element {
                   <FaLinkedin aria-hidden="true" />
                   LinkedIn
                 </h3>
+                <p>linkedin.com/in/rohithsajja</p>
               </a>
             </div>
             <div className="contact-item">
@@ -99,31 +75,10 @@ function Contact(): React.JSX.Element {
                   <FaGraduationCap aria-hidden="true" />
                   Google Scholar
                 </h3>
+                <p>Publications and research profile</p>
               </a>
             </div>
           </div>
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                required
-              ></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Send Message
-            </button>
-          </form>
         </div>
       </div>
     </section>

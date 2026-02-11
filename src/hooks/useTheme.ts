@@ -26,9 +26,7 @@ export const useTheme = (): {
   setTheme: (theme: Theme) => void
   toggleTheme: () => void
 } => {
-  const [theme, setThemeState] = useState<Theme>(() => {
-    return getStoredTheme() ?? getSystemTheme()
-  })
+  const [theme, setThemeState] = useState<Theme>(() => getStoredTheme() ?? getSystemTheme())
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
@@ -51,7 +49,7 @@ export const useTheme = (): {
       mediaQuery.addListener(handleChange)
     }
 
-    return () => {
+    return (): void => {
       if (typeof mediaQuery.removeEventListener === 'function') {
         mediaQuery.removeEventListener('change', handleChange)
       } else {

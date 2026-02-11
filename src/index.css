@@ -892,11 +892,9 @@ body {
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: block;
   margin-top: 3rem;
-  max-width: 1000px;
+  max-width: 760px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -904,12 +902,31 @@ body {
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
+}
+
+.contact-item a {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--card-bg);
+  padding: 1rem 1.25rem;
+  color: var(--terminal-green-dim);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'Meslo', 'JetBrains Mono', monospace;
+  display: block;
+}
+
+.contact-item a:hover {
+  border-color: var(--terminal-green);
+  transform: translateY(-2px);
+  color: var(--terminal-green);
+  text-shadow: 0 0 10px var(--terminal-green);
 }
 
 .contact-item h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0;
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
   color: var(--terminal-green);
   font-family: 'Meslo', 'JetBrains Mono', monospace;
   text-shadow: 0 0 2px var(--terminal-green);
@@ -919,69 +936,10 @@ body {
   font-weight: 500;
 }
 
-.contact-item h3::before {
-  content: '';
-}
-
-.contact-item a {
+.contact-item p {
+  margin: 0;
   color: var(--terminal-green-dim);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-family: 'Meslo', 'JetBrains Mono', monospace;
-  display: inline-block;
-}
-
-.contact-item a:hover {
-  color: var(--terminal-green);
-  text-shadow: 0 0 10px var(--terminal-green);
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form-group label {
-  font-weight: 500;
-  color: var(--terminal-green);
-  font-family: 'Meslo', 'JetBrains Mono', monospace;
-  text-shadow: 0 0 5px var(--terminal-green);
-}
-
-.form-group label::before {
-  content: '$ ';
-  color: var(--terminal-green-dim);
-}
-
-.form-group input,
-.form-group textarea {
-  padding: 0.75rem;
-  border: 2px solid var(--border-color);
-  border-radius: 4px;
-  background-color: var(--bg-secondary);
-  color: var(--terminal-green);
-  font-family: 'Meslo', 'JetBrains Mono', monospace;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--terminal-green);
-  box-shadow: 0 0 10px rgba(var(--glow-rgb), 0.3);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 120px;
+  font-size: 0.95rem;
 }
 
 .education-grid {
@@ -1320,11 +1278,6 @@ body {
 
   .skills-grid {
     grid-template-columns: 1fr;
-  }
-
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
   }
 
   .nav-container {

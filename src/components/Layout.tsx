@@ -21,9 +21,7 @@ function Layout({ children }: LayoutProps): React.JSX.Element {
     timeZoneName: 'short',
   })
 
-  const isActive = (path: string): boolean => {
-    return location.pathname === path
-  }
+  const isActive = (path: string): boolean => location.pathname === path
 
   useEffect(() => {
     setMenuOpen(false)
