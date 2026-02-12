@@ -31,6 +31,8 @@ jobs:
       - name: Lint
         run: npm run lint
       - name: Build
+        env:
+          VITE_BASE: /
         run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
